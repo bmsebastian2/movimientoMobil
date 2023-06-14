@@ -3,7 +3,7 @@ let parrafoBeta = document.getElementsByClassName("beta");
 let h1 = document.getElementById("h1");
 
 if (window.DeviceOrientationEvent) {
-  window.addEventListener("deviceorientation", handleOrientation, false);
+  window.addEventListener("deviceorientation", handleOrientation, true);
   h1.innerText = "suport";
 }
 
