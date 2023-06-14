@@ -1,5 +1,11 @@
 console.log("hola 3");
 let parrafoBeta = document.getElementsByClassName("beta");
+let h1 = document.getElementById("h1");
+
+if (window.DeviceOrientationEvent) {
+  window.addEventListener("deviceorientation", handleOrientation, false);
+  h1.innerText = "suport";
+}
 
 window.addEventListener("deviceorientation", handleOrientation, true);
 window.addEventListener("devicemotion", handleMotion, true);
