@@ -6,7 +6,7 @@ if (window.DeviceOrientationEvent) {
   window.addEventListener("deviceorientation", handleOrientation, true);
   h1.innerText = "suport";
   function handleOrientation(event) {
-    parrafoBeta[0].innerText = event.acceleration.x;
+    parrafoBeta[0].innerText = event.gamma;
   }
 }
 
