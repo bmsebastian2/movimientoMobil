@@ -9,6 +9,6 @@ function handleOrientation(event) {
   const beta = event.beta;
   const gamma = event.gamma;
   console.log(alpha);
-  parrafoBeta[0].innerText = alpha + beta + gamma;
+  parrafoBeta[0].innerText = parrafoBeta[0].innerText + 1;
   // Do stuff with the new orientation data
 }
