@@ -6,7 +6,7 @@ if (window.DeviceOrientationEvent) {
   window.addEventListener("deviceorientation", handleOrientation, true);
   h1.innerText = "suport";
   function handleOrientation(event) {
-    parrafoBeta[0].innerText = event.gamma;
+    parrafoBeta[0].innerText = "Beta: " + event.gamma;
   }
 }
 
@@ -19,7 +19,7 @@ if (window.DeviceMotionEvent) {
     const beta = event.beta;
     const gamma = event.gamma;
     console.log(alpha);
-    parrafoBeta[1].innerText = beta;
+    parrafoBeta[1].innerText = "aplha" + alpha;
     // Do stuff with the new orientation data
   }
 }
