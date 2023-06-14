@@ -1,4 +1,4 @@
-console.log("hola 2");
+console.log("hola 3");
 window.addEventListener("deviceorientation", handleOrientation, true);
 
 function handleOrientation(event) {
