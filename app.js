@@ -16,8 +16,8 @@ if (window.DeviceMotionEvent) {
 
   function handleMotion(event) {
     // const absolute = event.absolute;
-    const ax = Math.round(event.accelerationIncludingGravity.x);
-    const ay = Math.round(event.accelerationIncludingGravity.y);
+    const ax = event.accelerationIncludingGravity.x;
+    const ay = event.accelerationIncludingGravity.y;
     // const az = Math.round(event.accelerationIncludingGravity.z);
 
     parrafoX.innerText = ax;
