@@ -16,8 +16,8 @@ if (window.DeviceMotionEvent) {
 
   function handleMotion(event) {
     // const absolute = event.absolute;
-    const ax = event.accelerationIncludingGravity.x;
-    const ay = event.accelerationIncludingGravity.y;
+    const ax = Math.round(event.accelerationIncludingGravity.x);
+    const ay = Math.round(event.accelerationIncludingGravity.y);
     // const az = Math.round(event.accelerationIncludingGravity.z);
 
     parrafoX.innerText = ax;
@@ -34,7 +34,7 @@ if (window.DeviceMotionEvent) {
     const rotationY = ((ay - halfHeight) / halfHeight) * 30;
     // const rotationZ = ((az - halfHeight) / halfHeight) * 30;
 
-    ticket.style.transform = `rotateX(${ax * 5}deg) rotateY(${ay * 5}deg)`;
+    ticket.style.transform = `rotateX(${ax * 3}deg) rotateY(${ay * 3}deg)`;
     if (ax === 0 && ay === 0) {
       ticket.style.transition = "transform .5s ease-in-out";
       ticket.style.transform = `rotateX(0deg) rotateY(0deg)`;
