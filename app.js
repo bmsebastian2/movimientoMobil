@@ -1,5 +1,6 @@
-let parrafoBeta = document.getElementsByClassName("beta");
-let h1 = document.getElementById("h1");
+let parrafoX = document.getElementById("x");
+let parrafoY = document.getElementById("y");
+let parrafoZ = document.getElementById("z");
 
 // if (window.DeviceOrientationEvent) {
 //   window.addEventListener("deviceorientation", handleOrientation, true);
@@ -17,7 +18,10 @@ function handleMotion(event) {
   const ax = event.accelerationIncludingGravity.x;
   const ay = event.accelerationIncludingGravity.y;
   const az = event.accelerationIncludingGravity.z;
-  parrafoBeta[0].innerText = ax + ay + az;
+  parrafoX.innerText = ax;
+  parrafoY.innerText = ay;
+  parrafoZ.innerText = az;
+
   // console.log(alpha);
   // parrafoBeta[1].innerText = "aplha" + alpha;
   // Do stuff with the new orientation data
