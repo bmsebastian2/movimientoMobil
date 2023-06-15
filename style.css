@@ -2,7 +2,7 @@
     color: black;
 }
 
-body {
+/* body {
     margin: 0;
     padding: 0;
     display: grid;
@@ -10,7 +10,7 @@ body {
     height: 100vh;
     background-color: brown;
 
-}
+} */
 
 .container {
     display: grid;
