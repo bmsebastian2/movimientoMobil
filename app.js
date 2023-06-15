@@ -1,7 +1,8 @@
 let parrafoX = document.getElementById("x");
 let parrafoY = document.getElementById("y");
 let parrafoZ = document.getElementById("z");
-
+const wrapper = document.querySelector(".wrapper");
+const ticket = document.querySelector(".ticket");
 // if (window.DeviceOrientationEvent) {
 //   window.addEventListener("deviceorientation", handleOrientation, true);
 //   h1.innerText = "suport";
@@ -10,20 +11,36 @@ let parrafoZ = document.getElementById("z");
 //   }
 // }
 
-// if (window.DeviceMotionEvent) {
-window.addEventListener("devicemotion", handleMotion);
+if (window.DeviceMotionEvent) {
+  window.addEventListener("devicemotion", handleMotion);
 
-function handleMotion(event) {
-  // const absolute = event.absolute;
-  const ax = event.accelerationIncludingGravity.x;
-  const ay = event.accelerationIncludingGravity.y;
-  const az = event.accelerationIncludingGravity.z;
-  parrafoX.innerText = Math.round(ax);
-  parrafoY.innerText = Math.round(ay);
-  parrafoZ.innerText = Math.round(az);
+  function handleMotion(event) {
+    // const absolute = event.absolute;
+    const ax = Math.round(event.accelerationIncludingGravity.x);
+    const ay = Math.round(event.accelerationIncludingGravity.y);
+    const az = Math.round(event.accelerationIncludingGravity.z);
 
-  // console.log(alpha);
-  // parrafoBeta[1].innerText = "aplha" + alpha;
-  // Do stuff with the new orientation data
+    parrafoX.innerText = ax;
+    parrafoY.innerText = ay;
+    parrafoZ.innerText = az;
+
+    const { width, height } = wrapper.getBoundingClientRect();
+    const halfWidth = width / 2;
+    const halfHeight = height / 2;
+
+    ticket.style.transition = "none";
+
+    const rotationX = ((ax - halfWidth) / halfWidth) * 10;
+    const rotationY = ((ay - halfHeight) / halfHeight) * 10;
+
+    ticket.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg) `;
+    // window.addEventListener("mouseleave", () => {
+    //   ticket.style.transition = "transform .5s ease-in-out";
+    //   ticket.style.transform = `rotateX(0deg) rotateY(0deg) `;
+    // });
+
+    // console.log(alpha);
+    // parrafoBeta[1].innerText = "aplha" + alpha;
+    // Do stuff with the new orientation data
+  }
 }
-// }
