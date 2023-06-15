@@ -24,17 +24,17 @@ if (window.DeviceMotionEvent) {
     parrafoY.innerText = ay;
     // parrafoZ.innerText = az;
 
-    const { width, height } = wrapper.getBoundingClientRect();
-    const halfWidth = width / 2;
-    const halfHeight = height / 2;
+    // const { width, height } = wrapper.getBoundingClientRect();
+    // const halfWidth = width / 2;
+    // const halfHeight = height / 2;
 
     ticket.style.transition = "none";
 
-    const rotationX = ((ax - halfWidth) / halfWidth) * 30;
-    const rotationY = ((ay - halfHeight) / halfHeight) * 30;
+    // const rotationX = ((ax - halfWidth) / halfWidth) * 30;
+    // const rotationY = ((ay - halfHeight) / halfHeight) * 30;
     // const rotationZ = ((az - halfHeight) / halfHeight) * 30;
 
-    ticket.style.transform = `rotateX(${ax * 3}deg) rotateY(${ay * 3}deg)`;
+    ticket.style.transform = `rotateX(${ax * 4}deg) rotateY(${ay * 4}deg)`;
     if (ax === 0 && ay === 0) {
       ticket.style.transition = "transform .5s ease-in-out";
       ticket.style.transform = `rotateX(0deg) rotateY(0deg)`;
