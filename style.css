@@ -2,6 +2,15 @@
     color: black;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background-color: brown;
+
+}
 
 .container {
     display: grid;
