@@ -18,9 +18,9 @@ function handleMotion(event) {
   const ax = event.accelerationIncludingGravity.x;
   const ay = event.accelerationIncludingGravity.y;
   const az = event.accelerationIncludingGravity.z;
-  parrafoX.innerText = ax;
-  parrafoY.innerText = ay;
-  parrafoZ.innerText = az;
+  parrafoX.innerText = Math.round(ax);
+  parrafoY.innerText = Math.round(ay);
+  parrafoZ.innerText = Math.round(az);
 
   // console.log(alpha);
   // parrafoBeta[1].innerText = "aplha" + alpha;
