@@ -34,6 +34,10 @@ if (window.DeviceMotionEvent) {
     const rotationY = ((ay - halfHeight) / halfHeight) * 10;
 
     ticket.style.transform = `rotateX(${ax}deg) rotateY(${ay}deg) `;
+    if (ax === 0 && ay === 0) {
+      ticket.style.transition = "transform .5s ease-in-out";
+      ticket.style.transform = `rotateX(0deg) rotateY(0deg) `;
+    }
     // window.addEventListener("mouseleave", () => {
     //   ticket.style.transition = "transform .5s ease-in-out";
     //   ticket.style.transform = `rotateX(0deg) rotateY(0deg) `;
