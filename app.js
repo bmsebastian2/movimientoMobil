@@ -33,9 +33,7 @@ if (window.DeviceMotionEvent) {
     const rotationX = ((ax - halfWidth) / halfWidth) * 10;
     const rotationY = ((ay - halfHeight) / halfHeight) * 10;
 
-    ticket.style.transform = `rotateX(${ax * 3}deg) rotateY(${
-      ay * 3
-    }deg) rotateZ(${az * 3}deg) `;
+    ticket.style.transform = `rotateX(${ax}deg) rotateY(${ay}deg) rotateZ(${az}deg) `;
     if (ax === 0 && ay === 0) {
       ticket.style.transition = "transform .5s ease-in-out";
       ticket.style.transform = `rotateX(0deg) rotateY(0deg) rotateZ(0deg) `;
