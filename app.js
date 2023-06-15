@@ -30,9 +30,9 @@ if (window.DeviceMotionEvent) {
 
     ticket.style.transition = "none";
 
-    const rotationX = ((ax - halfWidth) / halfWidth) * 100;
-    const rotationY = ((ay - halfHeight) / halfHeight) * 100;
-    const rotationZ = ((az - halfHeight) / halfHeight) * 100;
+    const rotationX = ((ax - halfWidth) / halfWidth) * 30;
+    const rotationY = ((ay - halfHeight) / halfHeight) * 30;
+    const rotationZ = ((az - halfHeight) / halfHeight) * 30;
 
     ticket.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg) rotateZ(${rotationZ}deg) `;
     if (ax === 0 && ay === 0) {
