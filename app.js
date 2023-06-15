@@ -3,28 +3,49 @@ let parrafoY = document.getElementById("y");
 let parrafoZ = document.getElementById("z");
 const wrapper = document.querySelector(".wrapper");
 const ticket = document.querySelector(".ticket");
+// if (window.DeviceOrientationEvent) {
+//   window.addEventListener("deviceorientation", handleOrientation, true);
+//   h1.innerText = "suport";
+//   function handleOrientation(event) {
+//     parrafoBeta[0].innerText = "Beta: " + event.gamma;
+//   }
+// }
 
 if (window.DeviceMotionEvent) {
   window.addEventListener("devicemotion", handleMotion);
 
   function handleMotion(event) {
+    // const absolute = event.absolute;
     const ax = Math.round(event.accelerationIncludingGravity.x);
     const ay = Math.round(event.accelerationIncludingGravity.y);
+    // const az = Math.round(event.accelerationIncludingGravity.z);
 
     parrafoX.innerText = ax;
     parrafoY.innerText = ay;
+    // parrafoZ.innerText = az;
+
+    const { width, height } = wrapper.getBoundingClientRect();
+    const halfWidth = width / 2;
+    const halfHeight = height / 2;
 
     ticket.style.transition = "none";
 
     const rotationX = ((ax - halfWidth) / halfWidth) * 30;
     const rotationY = ((ay - halfHeight) / halfHeight) * 30;
+    // const rotationZ = ((az - halfHeight) / halfHeight) * 30;
 
-    ticket.style.transform = `rotateX(${
-      event.accelerationIncludingGravity.x * 10
-    }deg) rotateY(${event.accelerationIncludingGravity.y * 10}deg)`;
+    ticket.style.transform = `rotateX(${ax * 10}deg) rotateY(${ay * 10}deg)`;
     if (ax === 0 && ay === 0) {
       ticket.style.transition = "transform .5s ease-in-out";
       ticket.style.transform = `rotateX(0deg) rotateY(0deg)`;
     }
+    // window.addEventListener("mouseleave", () => {
+    //   ticket.style.transition = "transform .5s ease-in-out";
+    //   ticket.style.transform = `rotateX(0deg) rotateY(0deg) `;
+    // });
+
+    // console.log(alpha);
+    // parrafoBeta[1].innerText = "aplha" + alpha;
+    // Do stuff with the new orientation data
   }
 }
